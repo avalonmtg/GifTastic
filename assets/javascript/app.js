@@ -24,7 +24,6 @@ $(document).ready( function() {
         renderButtons();
         return;
     });
-
     
     $("#add-flowers").on("click", function (event) {
         var submit = $("#flowerInput").val().trim();
@@ -89,12 +88,12 @@ $(document).ready( function() {
         var animateImage = $(this).attr("data-animate");
         
         if (state === "still") {
-            $(this).attr("src", animateImage);
+            $(this).attr("src", $(this).attr("data-animate"));
             $(this).attr("data-state", "animate");
             console.log(state)
         }
-        else if (state === animate) {
-            $(this).attr("src", stillImage);
+        else if (state === "animate") {
+            $(this).attr("src", $(this).attr("data-still"));
             $(this).attr("data-state", "still");
             console.log(animate)
         }
